@@ -9,7 +9,7 @@ resource "aws_instance" "instance_ab_diplom_ubuntu" {
   count = 1
   subnet_id = aws_subnet.public_subnets[count.index].id
   ami           = "ami-04e601abe3e1a910f"
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   key_name      = aws_key_pair.key.key_name
   vpc_security_group_ids = [aws_security_group.allow_http_ssh_pub.id]
   associate_public_ip_address = true
